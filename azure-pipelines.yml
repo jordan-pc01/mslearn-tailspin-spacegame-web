@@ -19,7 +19,7 @@ steps:
 - task: UseDotNet@2
   displayName: Use .NET SDK $(dotnetSdkVersion)
   inputs:
-  version: $(dotnetSdkVersion)
+    version: $(dotnetSdkVersion)
 - task: Npm@1
   displayName: Run npm install
   inputs:
@@ -34,8 +34,8 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: Restore project dependencies
   inputs:
-  command: restore
-  projects: '**/*.csproj'
+    command: restore
+    projects: '**/*.csproj'
 - task: DotNetCoreCLI@2
   displayName: Build the project - $(buildConfiguration)
   inputs:
